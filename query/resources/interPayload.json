@@ -1,0 +1,7 @@
+{
+  "operationName": "questionData",
+  "variables": {
+    "titleSlug": "two-sum"
+  },
+  "query": "query questionData($titleSlug: String!) {         question(titleSlug: $titleSlug) {\n             questionId\n             categoryTitle\n             title\n             titleSlug\n             translatedTitle\n             translatedContent\n             isPaidOnly\n             difficulty\n                codeSnippets\n {                 lang\n                 langSlug\n                 code\n             }         }     }"
+}
