@@ -15,7 +15,6 @@ import (
 	"github.com/levinion/letc/model"
 
 	"github.com/fatih/color"
-	"github.com/lunny/html2md"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
@@ -65,20 +64,16 @@ func Get(index int) {
 	if viper.GetBool("function.useNeed") {
 		if !isExist(needFilePath) {
 			color.Cyan("请勿重复拉取文件")
+			return
 		} else {
 			nfile, err := os.Create(needFilePath)
 			checkErr(err)
 			defer nfile.Close()
-			needR = convert(needR)
 			nfile.WriteString(needR)
+			return
 		}
 	}
 	t.Stop()
-}
-
-func convert(input string) (output string) {
-	output = html2md.Convert(input)
-	return
 }
 
 func isExist(path string) bool {

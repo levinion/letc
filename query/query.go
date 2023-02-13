@@ -19,8 +19,9 @@ var interPayload string
 
 func GetSlug(index int) (slug, diff string) {
 	res := query(slugPayload)
+	fmt.Println(res.String())
 	jsonString := res.String()
-	baseFindPath := fmt.Sprintf("data.allQuestionsBeta.%d", index-1)
+	baseFindPath := fmt.Sprintf("data.allQuestionsBeta.#(questionId=%d)", index)
 	slugFindPath := baseFindPath + ".titleSlug"
 	diffFindPath := baseFindPath + ".difficulty"
 	slug = gjson.Get(jsonString, slugFindPath).String()

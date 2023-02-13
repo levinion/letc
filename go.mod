@@ -6,7 +6,6 @@ require (
 	github.com/cheggaaa/pb v1.0.29
 	github.com/fatih/color v1.14.1
 	github.com/imroc/req/v3 v3.32.0
-	github.com/lunny/html2md v0.0.0-20181018071239-7d234de44546
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.15.0
