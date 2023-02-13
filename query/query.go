@@ -19,7 +19,6 @@ var interPayload string
 
 func GetSlug(index int) (slug, diff string) {
 	res := query(slugPayload)
-	fmt.Println(res.String())
 	jsonString := res.String()
 	baseFindPath := fmt.Sprintf("data.allQuestionsBeta.#(questionId=%d)", index)
 	slugFindPath := baseFindPath + ".titleSlug"

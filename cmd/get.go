@@ -54,6 +54,7 @@ func Get(index int) {
 	needFilePath := filepath.Join(dir, "need.md")
 	if !isExist(codeFilePath) {
 		color.Cyan("请勿重复拉取文件")
+		return
 	} else {
 		cfile, err := os.Create(codeFilePath)
 		checkErr(err)
@@ -70,7 +71,6 @@ func Get(index int) {
 			checkErr(err)
 			defer nfile.Close()
 			nfile.WriteString(needR)
-			return
 		}
 	}
 	t.Stop()
