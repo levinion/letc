@@ -16,7 +16,7 @@ func ReadConfig() {
 }
 
 func InitConfig() {
-	viper.SetConfigFile("letc.toml")
+	viper.SetConfigFile("./letc.toml")
 	viper.SetDefault("alias.easy", "easy")
 	viper.SetDefault("alias.medium", "medium")
 	viper.SetDefault("alias.hard", "hard")

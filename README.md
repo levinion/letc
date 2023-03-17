@@ -23,6 +23,7 @@ go install github.com/levinion/letc@latest
 |----|----|
 |`letc cal` 或 `letc`|统计已完成的题数,可在文件夹下新建名为 `todo` 的文件以忽略未做的题目|
 |`letc get {题号}`|拉取给定题号的题目|
+|`letc question {问题描述}`|使用ai（gpt）回答问题），需先在配置文件中配置请求url和认证token|
 
 ## 可配置选项
 
@@ -46,6 +47,12 @@ func main(){
 }
 
 """
+
+[ai]                # 是否启用ai
+enable=false
+url="https://openai.api2d.net/v1/chat/completions"
+auth=""
+max_tokens=100
 
 [style]
 tableMod=false      # 是否已表格模式显示完成题数，启用前需确保模块化开启
